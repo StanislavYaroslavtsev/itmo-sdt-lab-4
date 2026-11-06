@@ -22,6 +22,18 @@ class RectangleAreaTestCase(unittest.TestCase):
     def test_commutative(self):
         self.assertEqual(area(3, 7), area(7, 3))
 
+    def test_negative_side_raises(self):
+        with self.assertRaises(ValueError):
+            area(-2, 4)
+
+    def test_both_negative_raises(self):
+        with self.assertRaises(ValueError):
+            area(-2, -4)
+
+    def test_string_side_raises(self):
+        with self.assertRaises(TypeError):
+            area("2", "4")
+
 
 class RectanglePerimeterTestCase(unittest.TestCase):
     def test_both_zero(self):
@@ -41,3 +53,15 @@ class RectanglePerimeterTestCase(unittest.TestCase):
 
     def test_commutative(self):
         self.assertEqual(perimeter(3, 7), perimeter(7, 3))
+
+    def test_negative_side_raises(self):
+        with self.assertRaises(ValueError):
+            perimeter(-2, 4)
+
+    def test_both_negative_raises(self):
+        with self.assertRaises(ValueError):
+            perimeter(-2, -4)
+
+    def test_string_side_raises(self):
+        with self.assertRaises(TypeError):
+            perimeter("2", "4")
