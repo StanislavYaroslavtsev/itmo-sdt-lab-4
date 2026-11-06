@@ -16,6 +16,9 @@ class SquareAreaTestCase(unittest.TestCase):
     def test_float_side(self):
         self.assertAlmostEqual(area(2.5), 6.25)
 
+    def test_large_side(self):
+        self.assertEqual(area(1e6), 1e12)
+
     def test_negative_side_raises(self):
         with self.assertRaises(ValueError):
             area(-2)

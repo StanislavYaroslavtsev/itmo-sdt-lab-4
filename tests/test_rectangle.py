@@ -19,6 +19,9 @@ class RectangleAreaTestCase(unittest.TestCase):
     def test_float_sides(self):
         self.assertAlmostEqual(area(1.5, 6.2), 9.3)
 
+    def test_large_sides(self):
+        self.assertEqual(area(1e6, 1e6), 1e12)
+
     def test_commutative(self):
         self.assertEqual(area(3, 7), area(7, 3))
 

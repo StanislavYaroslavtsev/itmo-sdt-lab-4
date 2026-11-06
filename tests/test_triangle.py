@@ -19,6 +19,9 @@ class TriangleAreaTestCase(unittest.TestCase):
     def test_float_values(self):
         self.assertAlmostEqual(area(2.5, 4), 5.0)
 
+    def test_large_values(self):
+        self.assertAlmostEqual(area(1e6, 1e6), 5 * 1e11)
+
     def test_negative_side_raises(self):
         with self.assertRaises(ValueError):
             area(-2, 4)

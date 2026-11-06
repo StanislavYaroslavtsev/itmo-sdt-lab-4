@@ -17,6 +17,9 @@ class CircleAreaTestCase(unittest.TestCase):
     def test_float_radius(self):
         self.assertAlmostEqual(area(2.5), 6.25 * math.pi)
 
+    def test_big_integer_radius(self):
+        self.assertAlmostEqual(area(1e12), 1e24 * math.pi)
+
     def test_negative_radius_raises(self):
         with self.assertRaises(ValueError):
             area(-1)
